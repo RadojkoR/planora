@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logoImg from "@/assets/logo.png"
+import { SignUpBtn } from "@/components";
 // import { useState } from "react";
 // import { Menu, X } from "lucide-react";
 
@@ -10,7 +11,7 @@ export default function NavBar() {
 //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md px-4 py-3">
+    <nav className="mainNav">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="h-full w-44  xxs:w-64 xs:w-70 sm:w-80">
@@ -25,18 +26,14 @@ export default function NavBar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link href="/" className="text-gray-700 hover:text-blue-600">
+          <Link href="/" className="text-gray-700 hover:text-primary font-[600]">
             Početna
           </Link>
-          <Link href="/login" className="text-gray-700 hover:text-blue-600">
+          <Link href="/log-in" className="text-gray-700 hover:text-primary font-[600]">
             Prijavi se
           </Link>
-          <Link
-            href="/sign-up"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Registruj se
-          </Link>
+          
+          <SignUpBtn />
         </div>
 
         {/* Mobile Menu Button */}

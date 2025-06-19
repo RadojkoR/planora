@@ -1,11 +1,12 @@
+import MainHeader from "@/components/mainHeader/mainHeader";
 
 export default function Home() {
   return (
-    <div >
+    <>
+      <MainHeader />
       <main className="">
        <h1>Home Page</h1>
-      </main>
-      
-    </div>
+      </main>     
+    </>
   );
 }

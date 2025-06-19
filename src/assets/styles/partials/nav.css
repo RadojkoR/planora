@@ -1,0 +1,5 @@
+@layer components {  
+    .mainNav {
+        @apply px-4 py-3 fixed w-full
+    }
+}

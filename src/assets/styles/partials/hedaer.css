@@ -1,0 +1,8 @@
+@layer components {
+    .mainHeader {
+        @apply w-full min-h-screen
+    }
+    .headerContainer {
+        @apply py-5 px-4 lg:max-w-7xl mx-auto
+    }
+}
