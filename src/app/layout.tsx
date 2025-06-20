@@ -35,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${poppins.variable} antialiased flex flex-col  min-h-screen`}
+      >
         <NavBar />
         <MainHeaderBackground />
         {children}
