@@ -27,7 +27,7 @@ export default function NavBar() {
     <nav className={`mainNav ${hasScrolled ? "bg-white" : ''}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="h-full w-44  xxs:w-64 xs:w-70 sm:w-80">
+        <div className="h-full w-32  xxs:w-64 xs:w-70 sm:w-80">
           <Link href="/" className="">
             <Image
               className="h-full w-full"
