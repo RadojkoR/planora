@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "@/assets/styles/main.css";
-import NavBar from "@/components/nav/navbar";
-import Footer from "@/components/footer/footer";
-import MainHeaderBackground from "@/components/mainHeader/mainHeaderBackground";
-
+import { NavBar, Footer, MainHeaderBackground } from "@/components";
 
 
 const inter = Inter({
