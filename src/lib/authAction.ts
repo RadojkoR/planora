@@ -42,11 +42,19 @@ export async function signupFormAction(formData: FormData){
     await saveUser(user);
     redirect(`/${user.company_slug}`)
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      logToFile(`Greška u signupFormAction: ${error.message}`);
-    } else {
-      logToFile(`Greška u signupFormAction: ${String(error)}`);
+    if (
+      error instanceof Error &&
+      error.message === 'NEXT_REDIRECT'
+    ) {
+      return;
     }
+
+    if (error instanceof Error) {
+      console.error("Greška u signupFormAction:", error.message);
+    } else {
+      console.error("Nepoznata greška u signupFormAction.");
+    }
+  
     throw error;
   }
 
