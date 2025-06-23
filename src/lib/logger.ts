@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const logFilePath = path.join(process.cwd(), 'logs.txt');
+const logFilePath = path.join(process.cwd(),'tmp', 'logs.txt');
 
 export function logToFile(message: string) {
   const time = new Date().toISOString();

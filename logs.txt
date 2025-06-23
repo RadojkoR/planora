@@ -1,0 +1,4 @@
+[2025-06-23T17:44:23.740Z] signupFormAction pokrenut
+[2025-06-23T17:44:23.743Z] Primljeni podaci: company_name=test222, email=test222@test.com
+[2025-06-23T17:44:23.806Z] Korisnik uspešno upisan: test222
+[2025-06-23T17:44:23.837Z] Greška u signupFormAction: NEXT_REDIRECT
