@@ -11,6 +11,8 @@ export async function signupFormAction(formData: FormData){
     const companyNameRaw = formData.get('company_name');
     const userEmail = formData.get('email');
     const userPassword = formData.get('password');
+
+    console.log("Signup pokrenut:", { companyNameRaw, userEmail, userPassword });
     
 
     if (
@@ -29,6 +31,9 @@ export async function signupFormAction(formData: FormData){
         user_email: userEmail,
         user_password: hashedPassword
     }
+
+    console.log("Korisnik koji se upisuje:", user);
+
     await saveUser(user);
     redirect(`/${user.company_slug}`)
   }

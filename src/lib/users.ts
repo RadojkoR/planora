@@ -19,7 +19,14 @@ interface NewUserProp {
             user.user_password,
           ];
         
-          await db.execute(insertUserQuery, values);
+          try {
+            console.log("Upisujem u bazu:", values);
+            await db.execute(insertUserQuery, values);
+            console.log("Uspešan upis u bazu.");
+          } catch (error) {
+            console.error("Greška pri upisu u bazu:", error);
+            throw error;
+          }
   }
 
   export async function getUser(slug: string) {
