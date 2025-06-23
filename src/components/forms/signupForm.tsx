@@ -1,11 +1,9 @@
-// import { signupFormAction } from "@/lib/authAction";
-
-import { signupFormData } from "@/lib/signupFormAction";
+import { signupFormAction } from "@/lib/authAction";
 
 
 export default function SignupForm() {   
     return (
-      <form action={signupFormData} className="space-y-4">
+      <form action={signupFormAction} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Company Name
