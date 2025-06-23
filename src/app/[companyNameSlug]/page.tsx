@@ -42,7 +42,6 @@ export default async function CompanyDetailsPage() {
           <input
             type="text"
             name="company_name"
-            defaultValue=""
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />
         </div>
@@ -54,7 +53,6 @@ export default async function CompanyDetailsPage() {
           <input
             type="text"
             name="company_address"
-            
             placeholder="Unesite adresu"
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />
@@ -67,7 +65,6 @@ export default async function CompanyDetailsPage() {
           <input
             type="text"
             name="company_tax_id"
-           
             placeholder="Unesite PIB"
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />
