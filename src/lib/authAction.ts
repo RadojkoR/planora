@@ -5,9 +5,6 @@ import { getUserByEmail, saveUser } from "./users";
 import { redirect } from "next/navigation";
 import { comparePassword, hashPassword } from "./password";
 
-import { signIn } from "next-auth/react";
-import { AuthError } from "next-auth";
-
 
 // SIGNUP FORM ACTION
 export async function signupFormData(formData: FormData){
