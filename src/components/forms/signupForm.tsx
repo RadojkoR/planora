@@ -1,4 +1,6 @@
-import { signupFormData } from "@/lib/authAction";
+// import { signupFormAction } from "@/lib/authAction";
+
+import { signupFormData } from "@/lib/signupFormAction";
 
 
 export default function SignupForm() {   
