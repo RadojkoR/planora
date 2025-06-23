@@ -5,14 +5,19 @@ import { saveUser } from "./users";
 import { redirect } from "next/navigation";
 import { hashPassword } from "./password";
 
+import { logToFile } from './logger';
+
 
 // SIGNUP FORM ACTION
 export async function signupFormAction(formData: FormData){
+  try {
+    logToFile("signupFormAction pokrenut");
+
     const companyNameRaw = formData.get('company_name');
     const userEmail = formData.get('email');
     const userPassword = formData.get('password');
 
-    console.log("Signup pokrenut:", { companyNameRaw, userEmail, userPassword });
+    logToFile(`Primljeni podaci: company_name=${companyNameRaw}, email=${userEmail}`);
     
 
     if (
@@ -32,10 +37,19 @@ export async function signupFormAction(formData: FormData){
         user_password: hashedPassword
     }
 
-    console.log("Korisnik koji se upisuje:", user);
+    logToFile(`Korisnik uspešno upisan: ${companyNameRaw}`);
 
     await saveUser(user);
     redirect(`/${user.company_slug}`)
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      logToFile(`Greška u signupFormAction: ${error.message}`);
+    } else {
+      logToFile(`Greška u signupFormAction: ${String(error)}`);
+    }
+    throw error;
+  }
+
   }
 
 //   SIGNIN FORM ACTION
