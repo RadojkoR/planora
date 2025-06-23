@@ -1,9 +1,9 @@
 'use server';
 
 import slugify from "slugify";
-import { getUserByEmail, saveUser } from "./users";
+import { saveUser } from "./users";
 import { redirect } from "next/navigation";
-import { comparePassword, hashPassword } from "./password";
+import { hashPassword } from "./password";
 
 
 // SIGNUP FORM ACTION
@@ -34,25 +34,25 @@ export async function signupFormData(formData: FormData){
   }
 
 //   SIGNIN FORM ACTION
-export async function loginFormAction(formData: FormData) {
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+// export async function loginFormAction(formData: FormData) {
+//     const email = formData.get("email") as string;
+//     const password = formData.get("password") as string;
 
-    if (typeof email !== 'string' || typeof password !== 'string') {
-        throw new Error('Email i lozinka su obavezni');
-      }
+//     if (typeof email !== 'string' || typeof password !== 'string') {
+//         throw new Error('Email i lozinka su obavezni');
+//       }
 
-      const user = await getUserByEmail(email);
-      if (!user) {
-        throw new Error('Ne postoji korisnik sa datim emailom');
-      }
+//       const user = await getUserByEmail(email);
+//       if (!user) {
+//         throw new Error('Ne postoji korisnik sa datim emailom');
+//       }
 
-      console.log("Entered password:", password);
-console.log("Hashed from DB:", user.user_password);
-      const isValid = await comparePassword(password, user.user_password);
-  if (!isValid) {
-    throw new Error('Pogrešna lozinka');
-  }
+//       console.log("Entered password:", password);
+// console.log("Hashed from DB:", user.user_password);
+//       const isValid = await comparePassword(password, user.user_password);
+//   if (!isValid) {
+//     throw new Error('Pogrešna lozinka');
+//   }
 
-  redirect(`/${user.company_slug}/dashboard`);
-}
+//   redirect(`/${user.company_slug}/dashboard`);
+// }

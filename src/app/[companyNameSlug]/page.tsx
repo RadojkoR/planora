@@ -1,29 +1,25 @@
-import { getUser } from "@/lib/users";
+// import { getUser } from "@/lib/users";
 
-interface CompanyDetailsPageProps {
-  params: {
-    companyNameSlug: string;
-  };
-}
 
-export default async function CompanyDetailsPage({ params }: CompanyDetailsPageProps) {
-   const user = await getUser(params.companyNameSlug)
-   if (!user) {
-     return (
-       <main className="mainContainer flex-grow">
-         <section>
-           <h1 className="text-3xl text-center text-red-600">
-             Firma nije pronađena.
-           </h1>
-         </section>
-       </main>
-     );
-   }
+
+export default async function CompanyDetailsPage() {
+  //  const user = await getUser(params.companyNameSlug)
+  //  if (!user) {
+  //    return (
+  //      <main className="mainContainer flex-grow">
+  //        <section>
+  //          <h1 className="text-3xl text-center text-red-600">
+  //            Firma nije pronađena.
+  //          </h1>
+  //        </section>
+  //      </main>
+  //    );
+  //  }
   return (
     <main className="mainContainer flex-grow">
       <section>
         <h1 className="text-5xl font-bold text-center text-primary mb-6">
-          Dobro dosli na {user.company_name} profil stranu
+          Dobro dosli na profil stranu
         </h1>
       </section>
       <section className="max-w-2xl mx-auto text-center text-gray-600 mt-4">
@@ -46,7 +42,7 @@ export default async function CompanyDetailsPage({ params }: CompanyDetailsPageP
           <input
             type="text"
             name="company_name"
-            defaultValue={user.company_name}
+            defaultValue=""
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />
         </div>
@@ -58,7 +54,7 @@ export default async function CompanyDetailsPage({ params }: CompanyDetailsPageP
           <input
             type="text"
             name="company_address"
-            defaultValue={user.company_address ?? ""}
+            
             placeholder="Unesite adresu"
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />
@@ -71,7 +67,7 @@ export default async function CompanyDetailsPage({ params }: CompanyDetailsPageP
           <input
             type="text"
             name="company_tax_id"
-            defaultValue={user.company_tax_id ?? ""}
+           
             placeholder="Unesite PIB"
             className="w-full mt-1 border px-3 py-2 rounded-md"
           />

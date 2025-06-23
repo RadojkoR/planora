@@ -34,7 +34,4 @@ interface NewUserProp {
     const rows = result[0] as RowDataPacket[]
 
     return rows[0]
-    // const user = Array.isArray(rows) ? rows[0] : null;
-    // if(!user) throw new Error("Korisnik nije pronadjen")
-    //     return user;
   }
