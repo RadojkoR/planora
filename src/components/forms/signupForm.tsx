@@ -1,30 +1,17 @@
-'use client';
+import { signupFormData } from "@/lib/authAction";
 
-import { useState } from "react";
 
-export default function SignupForm() {
-    const [form, setForm] = useState({ email: "", password: "", company: "" });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setForm({ ...form, [e.target.name]: e.target.value });
-    };
-  
-    const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
-      // TODO: Pošalji formu na backend
-      console.log(form);
-    }
+export default function SignupForm() {   
     return (
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form action={signupFormData} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Ime firme
+            Company Name
           </label>
           <input
             type="text"
-            name="company"
-            value={form.company}
-            onChange={handleChange}
+            id="company_name"
+            name="company_name"
             required
             className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -37,8 +24,6 @@ export default function SignupForm() {
           <input
             type="email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
             required
             className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -51,8 +36,6 @@ export default function SignupForm() {
           <input
             type="password"
             name="password"
-            value={form.password}
-            onChange={handleChange}
             required
             className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

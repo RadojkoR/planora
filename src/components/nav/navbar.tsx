@@ -46,7 +46,7 @@ export default function NavBar() {
             Početna
           </Link> */}
           <Link
-            href="/log-in"
+            href="/login"
             className="text-gray-700 text-sm sm:text-base hover:text-primary font-[600]"
           >
             Prijavi se

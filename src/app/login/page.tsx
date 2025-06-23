@@ -1,3 +1,5 @@
+import { LoginForm } from "@/components";
+import { Suspense } from "react";
 
 export default function LogIn() {
   return (
@@ -6,13 +8,10 @@ export default function LogIn() {
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Prijavi se
         </h1>
-       
-        {/* <p className="mt-4 text-sm text-center text-gray-600">
-          Već imaš nalog?{" "}
-          <Link href="/login" className="text-blue-600 hover:underline">
-            Prijavi se
-          </Link>
-        </p> */}
+
+        <Suspense>
+          <LoginForm />
+        </Suspense>
       </div>
     </main>
   );
