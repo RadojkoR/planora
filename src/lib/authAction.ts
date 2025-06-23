@@ -1,9 +1,9 @@
 'use server';
 
 import slugify from "slugify";
-import { saveUser } from "./users";
+import { getUserByEmail, saveUser } from "./users";
 import { redirect } from "next/navigation";
-import { hashPassword } from "./password";
+import { comparePassword, hashPassword } from "./password";
 
 import { logToFile } from './logger';
 
@@ -57,6 +57,30 @@ export async function signupFormAction(formData: FormData){
   
     throw error;
   }
+
+  }
+
+  export async function loginFormAction(formData: FormData) {
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    if(typeof email !== "string" || typeof password !== "string") {
+      throw new Error("Email i lozinka su obavezni")
+    }
+
+    const user = await getUserByEmail(email);
+
+    if(!user) {
+      throw new Error('Ne postoji korisnik sa tim emailom');
+    }
+
+    const isValid = await comparePassword(password, user.user_password);
+
+    if (!isValid) {
+      throw new Error('Pogrešna lozinka');
+    }
+
+    redirect(`/${user.company_slug}/dashboard`)
 
   }
 
