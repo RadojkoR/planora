@@ -2,3 +2,18 @@
 [2025-06-23T22:24:40.013Z] Primljeni podaci: company_name=planora Test, email=planora@test.com
 [2025-06-23T22:24:40.180Z] Korisnik uspešno upisan: planora Test
 [2025-06-23T22:24:40.978Z] Greška u signupFormAction: NEXT_REDIRECT
+[2025-06-23T23:40:33.708Z] signupFormAction pokrenut
+[2025-06-23T23:40:33.710Z] Primljeni podaci: company_name=test0000, email=test00@test.com
+[2025-06-23T23:40:33.775Z] Korisnik uspešno upisan: test0000
+[2025-06-23T23:49:36.301Z] signupFormAction pokrenut
+[2025-06-23T23:49:36.303Z] Primljeni podaci: company_name=test ime, email=testime@test.com
+[2025-06-23T23:49:36.440Z] Korisnik uspešno upisan: test ime
+[2025-06-23T23:56:12.497Z] signupFormAction pokrenut
+[2025-06-23T23:56:12.499Z] Primljeni podaci: company_name=test 888, email=test88@test.com
+[2025-06-23T23:56:12.668Z] Korisnik uspešno upisan: test 888
+[2025-06-23T23:58:48.392Z] signupFormAction pokrenut
+[2025-06-23T23:58:48.394Z] Primljeni podaci: company_name=test333, email=test33@test.com
+[2025-06-23T23:58:48.548Z] Korisnik uspešno upisan: test333
+[2025-06-24T00:07:10.422Z] signupFormAction pokrenut
+[2025-06-24T00:07:10.423Z] Primljeni podaci: company_name=test555, email=test55@test.com
+[2025-06-24T00:07:10.612Z] Korisnik uspešno upisan: test555
